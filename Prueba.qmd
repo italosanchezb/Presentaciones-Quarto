@@ -1,4 +1,8 @@
 ---
+project:
+  type: website
+  output-dir: docs
+
 format: 
   revealjs:
     theme: simple
