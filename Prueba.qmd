@@ -1,0 +1,271 @@
+---
+format: 
+  revealjs:
+    theme: simple
+    css: estilos.css
+    slide-level: 2
+---
+
+<section class="title-slide" style="display: flex; flex-direction: column; height: 100vh;">
+
+<h2 style="font-size: 50px; margin-bottom: 40px;">
+  La Desigualdad de Chebyshev en espacios de Banach y espacios de Hilbert
+</h2>
+
+<p style="font-size: 35px; margin-bottom: 20px;">
+  <strong>José Ítalo Sánchez Bermúdez</strong>
+</p>
+
+<p style="font-size: 25px; margin-bottom: 10px;">
+  Director: Jesús Adolfo Minjárez Sosa
+</p>
+
+<p style="font-size: 22px; margin-bottom: 30px;">
+  Posgrado en Ciencias Matemáticas
+</p>
+
+<img src="Imágenes/unison.png" alt="Logo" style="width: 250px; margin-top: 20px;">
+</section>
+
+
+
+# Capítulo 1
+
+## 
+<div style="display: grid; align-items: center; height: 100vh; text-align: left;">
+
+
+
+**Definición 1.2.7.** Sean $(\Omega,\mathcal{B})$, $(\Omega',\mathcal{B}')$ espacios medibles. Un *elemento aleatorio* es una función de la forma $X$ tal que $X^{-1}(\mathcal{B}') \subset \mathcal{B}$, donde
+$$
+X^{-1}(\mathcal{B}') = \left\{ X^{-1}(A) : A \in \mathcal{B}' \right\}.
+$$
+Para este capítulo $\Omega' = \mathbb{R}$. Las funciones $X:\Omega\to\mathbb{R}$ las llamamos *variables aleatorias*.
+
+</div>
+
+## 
+
+**Lema 1.2.1.** Sea $X$ una variable aleatoria, entonces para todo $\varepsilon > 0$,
+
+$$
+P(|X| \geq \varepsilon) \leq \frac{E|X|}{\varepsilon}.
+$$
+
+
+**Teorema 1.2.1 (Desigualdad de Markov).** Sea $X$ una variable aleatoria, entonces para todo $\varepsilon > 0$ y $k > 0$,
+
+$$
+P(|X| \geq \varepsilon) \leq \frac{E|X|^k}{\varepsilon^k}.
+$$
+
+## 
+
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 1.2.2. (Desigualdad de Chebyshev en** $\mathbb{R}$**).** Sea $X$ una variable aleatoria tal que $E(X^2) < \infty$, entonces para todo $\varepsilon > 0,$
+$$
+P\bigl(|X - E(X)| \geq \varepsilon\bigr) \leq \frac{Var(X)}{\varepsilon^2}.
+$$
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 1.2.3. (Pearson, 1919).** Supongamos que $X$ es una variable aleatoria para la cual $E(X^{2s})$ existe. Entonces, para todo $\varepsilon > 0, s > 0,$
+$$
+P\bigl(|X - E(X)| \geq \varepsilon\bigr) \leq \frac{E(X^{2s})}{\varepsilon^{2s}}.
+$$
+
+</div>
+
+# Capítulo 2
+
+##
+
+**Definición 2.1.1.** Sean $X$ y $Y$ variables aleatorias. Definimos el *coeficiente de correlación* de $X$ y $Y$ como
+$$
+\rho(X, Y) = \frac{Cov(X, Y)}{\sqrt{Var(X) Var(Y)}},
+$$
+donde $Cov(X, Y) = E\left[(X - E(X))(Y - E(Y))\right]$.
+
+
+
+**Teorema 2.2.1. (Valencia et al. 2012).**  
+Si $X$ y $Y$ son variables aleatorias con coeficiente de correlación $\rho$, entonces para $\varepsilon > 0$
+$$
+P\left( |X - E(X)| \geq \sqrt{Var(X)} \text{ o } |Y - E(Y)| \geq \sqrt{Var(Y)} \right) \leq \frac{1 + \sqrt{1 - \rho^2}}{\varepsilon^2}.
+$$
+
+##
+
+**Lema 2.2.1.**  
+Sea $X$ un vector aleatorio con $E\|X\|^2 < \infty$ y $\|\cdot\|$ la norma euclidiana en $\mathbb{R}^n$. Entonces, para cualquier $\varepsilon > 0$,
+
+$$
+P\left( \|X\| \geq \varepsilon \right) \leq \frac{E\|X\|^2}{\varepsilon^2}.
+$$
+
+
+**Teorema 2.2.1.**  
+Sea $X$ un vector aleatorio, entonces para $\varepsilon > 0$,
+
+$$
+P\left( \|X - E(X)\| \geq \varepsilon \right) \leq \frac{\mathrm{Var}(X)}{\varepsilon^2},
+$$
+
+donde $\|\cdot\|$ denota la norma euclidiana en $\mathbb{R}^n$.
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 2.3.4. (Chen, 2007).**  Para cualquier vector aleatorio $X$ con matriz de covarianza $\Sigma$, entonces para $\varepsilon > 0$,
+$$
+P\left( (X - E(X))^{T} \Sigma^{-1} (X - E(X)) \geq \varepsilon \right) \leq \frac{n}{\varepsilon}.
+$$
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 2.3.5. (Budny, 2014).** Para cualquier vector aleatorio $X$ con matriz de covarianza $\Sigma$ definida positiva y tal que $E\left[ (X - E(X))^T \Sigma^{-1} (X - E(X)) \right]^s < \infty$, entonces para $\varepsilon > 0$ y $s > 0$,
+$$
+P\left( (X - E(X))^{T} \Sigma^{-1} (X - E(X)) \geq \varepsilon \right) 
+\leq \frac{E\left[ \left( (X - E(X))^{T} \Sigma^{-1} (X - E(X)) \right)^s \right]}{\varepsilon^s}.
+$$
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 2.4.1. (Navarro, 2014).**  
+Sea $X = (X_1, \ldots, X_k)^T$ un vector aleatorio con $E(X) = \mu$ y matriz de covarianza $\Sigma$. Sea $\varepsilon \geq k$, entonces existe una sucesión $X_n = (X_1^{(n)}, \ldots, X_k^{(n)})$ de vectores aleatorios con media $\mu$ y matriz de covarianza $\Sigma$ tales que
+$$
+\lim_{n \to \infty} P\left( (X_n - E(X_n))^T \Sigma^{-1} (X_n - E(X_n)) \geq \varepsilon \right) = \frac{k}{\varepsilon}.
+$$
+
+</div>
+
+# Capítulo 3
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 3.2.2.**  
+Supongamos que $X$ es un elemento aleatorio en un espacio de Hilbert tal que $E\|X\|^2 < \infty$, entonces para cada $\varepsilon > 0$,
+$$
+P\left( \|X\| > \varepsilon \right) \leq \frac{E\|X\|^2}{\varepsilon^2}.
+$$
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Definición 3.2.1. (Operador de covarianza).** Sea $H$ un espacio de Hilbert y $(H, \mathcal{B}(H), P)$ un espacio de probabilidad, $\langle \cdot, \cdot \rangle$ el producto interior de $H$. El operador de covarianza $S$ de $\mu$ es el operador hermitiano determinado de manera única por la forma cuadrática,
+$$
+\langle S(y), y \rangle = \int_H \langle x, y \rangle^2 \, \mu(dx), \quad y \in H.
+$$
+Donde $\mu$ es la distribución de probabilidad del elemento aleatorio $X : \Omega \to H$.
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 3.2.3. (Rao, 2010).** Supongamos que $X : \Omega \to H$ es un elemento aleatorio con $E(X) = 0$, función de distribución $\mu$ y operador de covarianza $S$, tal que $\int_H \|x\|^2 \, \mu(dx) < \infty.$ Entonces, para todo $\varepsilon > 0$,
+$$
+P\left( \langle S(X), X \rangle > \varepsilon \right) \leq \frac{\left( \displaystyle\int_H \|x\|^2 \, \mu(dx) \right)^2}{\varepsilon}
+$$
+$$
+P\left( \langle S^{-1}(X), X \rangle > \varepsilon \right) \leq \frac{1}{\varepsilon} \|S^{-1}\|^2 \left( \int_H \|x\|^2 \, \mu(dx) \right)^2
+$$
+
+</div>
+
+##
+
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 3.3.1 (Budny, 2010).** Supongamos que $X : \Omega \to H$ es un elemento aleatorio con $E(X) = 0$, función de distribución $\mu$ y operador de covarianza $S$, tal que $\int_H \|x\|^{2s} \, \mu(dx) < \infty.$ Entonces, para todo $\varepsilon > 0$,
+$$
+P\left( \langle S(X), X \rangle > \varepsilon \right) \leq \frac{\left( \displaystyle\int_H \|x\|^{2s} \, \mu(dx) \right)^2}{\varepsilon}
+$$
+$$
+P\left( \langle S^{-1}(X), X \rangle > \varepsilon \right) \leq \frac{1}{\varepsilon} \|S^{-1}\|^{2s} \left( \int_H \|x\|^{2s} \, \mu(dx) \right)^2
+$$
+
+</div>
+
+# Capítulo 4
+
+## 
+
+
+**Teorema 4.1.1.** Para $X \in L_p(B)$, $p \geq 1$, existe un único operador lineal $E : L_1(B) \to B$, llamado *la esperanza de $X$*, tal que
+
+1. $\displaystyle E(X) = \sum_{i=1}^n P(A_i) x_i$ si $\displaystyle X = \sum_{i=1}^n \mathbf{1}_{A_i} x_i$.
+
+2. $\|E(X)\| \leq E \|X\|$, para toda $X \in L_1(B)$.
+
+
+**Lema 4.1.1.** Supongamos que $X:\Omega \to B$ es medible. Entonces existe una sucesión $\{X_n\}$ de funciones simples tales que
+$$
+\lim_{n \to \infty} \sup_{\omega \in \Omega} \| X_n(\omega) - X(\omega) \| = 0,
+$$
+y para todo $\omega \in \Omega$, para todo $n \geq 1$,  
+$$
+\| X_n(\omega) \| \leq 2 \| X(\omega) \|.
+$$
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 4.2.1. (Ling, Ze-Chun, 2012)** Supongamos que $X$ es un elemento aleatorio con valores en $B$, donde $B$ es un espacio de Banach con distribución de probabilidad $\mu$. Si $\int_B \|x\|^2 \mu(dx) < \infty,$ 
+entonces la forma cuadrática
+$$
+g(S(f)) = (S(f), g) = \int_B f(x) g(x) \mu(dx), \quad \forall f, g \in B^*,
+$$
+determina de forma única un operador lineal acotado $S : B^* \to B$.
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 4.2.2.(Zhou, Hu, 2012)** Supongamos que $X$ es un elemento aleatorio con valores en $B$ con $E(X)=0$ y distribución de probabilidad $\mu$, tal que $\int_B \|x\|^2 \mu(dx) < \infty,$ $P^*$ es una medida de probabilidad en $(B^*, \mathcal{B}(B^*))$, y $S: B^* \to B$ es el operador lineal definido en el Teorema \ref{T4.1}. Entonces, para cualquier $\varepsilon > 0$,
+$$
+P^*\left(\{ f \in B^* : (S(f), f) \geq \varepsilon \}\right) \leq \frac{1}{\varepsilon} \int_{B^*} \|f\|^{*2} P^*(df) \left(\int_B \|x\|^2 \mu(dx)\right).
+$$
+Si $S$ es invertible,
+$$
+P\left(\{ (S^{-1}(X), X) \geq \varepsilon \}\right) \leq \frac{1}{\varepsilon} \|S^{-1}\|^2 \left(\int_B \|x\|^2 \mu(dx)\right)^2.
+$$
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Proposición 4.3.1.** El Teorema 4.2.2 generaliza el Teorema 3.2.2.
+
+</div>
+
+##
+<div style="display: flex; align-items: center; height: 100%;">
+
+**Teorema 4.4.1. (2025).** Supongamos que $X$ es un elemento aleatorio con $E(X)=0$ y distribución de probabilidad $\mu$, que cumple con $\int_B \|x\|^{2s} \mu(dx) < \infty,$
+$P^*$ es una medida de probabilidad en $(B^*, \mathcal{B}(B^*))$, y $S: B^* \to B$ es el operador lineal definido en el Teorema 4.2.1. Entonces, para cualesquiera $\varepsilon > 0$ y $s > 0$,
+$$
+P^*\bigl\{f \in B^* : (S(f), f) \geq \varepsilon \bigr\} \leq \dfrac{1}{\varepsilon^s} \int_{B^*} \bigl(\|f\|^*\bigr)^{2s} P^*(df) \cdot \int_B \|x\|^{2s} \mu(dx).
+$$
+Si $S$ es invertible,
+$$
+P\bigl\{ (S^{-1}(X), X) \geq \varepsilon \bigr\} \leq \dfrac{1}{\varepsilon^s} \|S^{-1}\|^{2s} \left(\int_B \|x\|^{2s} \mu(dx) \right)^2.
+$$
+
+</div>
+

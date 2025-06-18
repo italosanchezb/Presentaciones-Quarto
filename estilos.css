@@ -1,0 +1,27 @@
+/* estilos.css */
+
+.reveal .slides section:not(.title-slide) {
+  font-size: 28px;
+}
+
+.reveal .slides section:not(.title-slide) h1 {
+  font-size: 50px;
+}
+
+.reveal .slides section:not(.title-slide) h2 {
+  font-size: 42px;
+}
+
+.reveal .slides section:not(.title-slide) h3 {
+  font-size: 36px;
+}
+
+.reveal .slides .vcenter {
+  display: grid;
+  place-items: center;  /* centra vertical y horizontal */
+  height: 100vh;        /* toda la altura del viewport */
+  padding: 0 2rem;      /* opcional para márgenes laterales */
+  box-sizing: border-box;
+  text-align: center;
+}
+
